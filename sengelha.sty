@@ -1,0 +1,152 @@
+% sengelha.sty: Steven Engelhardt's personal stylesheet for typesetting
+%               papers, homeworks, etc.
+%
+% Written by Steven Engelhardt <sengelha@gmail.com>.  Many thanks to
+% Prof. Jeff Erickson <jeffe@uiuc.edu>.
+%
+% $Id: sengelha.sty,v 1.11 2003/02/27 16:02:42 sengelha Exp $
+
+\RequirePackage{fullpage}
+\RequirePackage{fancyhdr}
+\RequirePackage{mdwlist}
+\RequirePackage{ulem}
+\RequirePackage{amsfonts}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{amsthm}
+\RequirePackage{sectsty}
+\RequirePackage{titling}
+\RequirePackage{epsfig}
+\RequirePackage{verbatim}
+\RequirePackage{listings}
+\RequirePackage{color}
+\RequirePackage{url}
+\RequirePackage{multirow}
+\RequirePackage{rotating}
+\RequirePackage{multicol}
+\RequirePackage{hhline}
+\RequirePackage{tabularx}
+
+\lstset{frame=ltrb,
+        framesep=5pt,
+        basicstyle=\ttfamily,
+        columns=flexible,
+        showspaces=false,
+        keywordstyle=\color{blue},
+        stringstyle=\color[rgb]{0.71,0.21,0.01},
+        commentstyle=\color[rgb]{0.4,0.4,0.4},
+        showstringspaces=false}
+
+% amsmath: Allow page breaks in the middle of multi-line math equations
+\allowdisplaybreaks[1]
+
+% Customize looks of sections
+\sectionfont{\sffamily \large}
+\subsectionfont{\sffamily \normalsize}
+\subsubsectionfont{\sffamily \small}
+
+% Customize look of \maketitle
+\setlength{\droptitle}{-1in}
+\pretitle{\begin{center}\sffamily\Large}
+\posttitle{\par\end{center}}
+\preauthor{\begin{center}\sffamily\large}
+\postauthor{\par\end{center}}
+\predate{\begin{center}\sffamily\large}
+\postdate{\par\end{center}}
+
+% \headfoot{left}{middle}{right} -- set up page headers and footers
+%       left    -- left header item
+%       middle  -- middle header item
+%       right   -- right header item
+%
+%  Ex: \headers{CS 273 Fall 2002}{Homework 0 (due ...)}{Steven Engelhardt\\(sengelha@uiuc.edu)}
+\newcommand{\headfoot}[3]{
+   \pagestyle{fancy}
+   \headheight 12pt
+   \headsep 12pt
+   \lhead{\textbf{#1}}
+   \chead{\textbf{#2}}
+   \rhead{\textbf{#3}}
+   \renewcommand{\headrulewidth}{0.3pt}
+}
+
+\def\QED{\ensuremath{{\square}}}
+\def\markatright#1{\leavevmode\unskip\nobreak\quad\hspace*{\fill}{#1}}
+
+% Standard solution environment
+\newenvironment{solution}[1][\solutionname]{\par
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \trivlist
+  \item[\hskip\labelsep
+        \itshape
+    #1\@addpunct{.}]\ignorespaces
+}{%
+  \popQED\endtrivlist\@endpefalse
+}
+% Solution environment with a newline
+\newenvironment{solution*}[1][\solutionname]{\par
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  {\textbf #1}\@addpunct{:}
+}{%
+  \popQED\@endpefalse
+}
+\newcommand{\solutionname}{Solution}
+
+\newtheorem{enumtheorem}{Theorem}[enumi]   % Theorem in enumerate
+\newtheorem{enumlemma}[enumtheorem]{Lemma}
+%\newtheorem{secttheorem}{Theorem}[...] % TODO
+%\newtheorem{sectlemma}[secttheorem]{Lemma}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{proposition}{Proposition}
+\newtheorem{question}{Question}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+% Algorithm environment
+\def\begin@lgo{\begin{minipage}{0in}\begin{tabbing}%
+    \qquad\=\qquad\=\qquad\=\qquad\=\qquad\=\qquad\=\qquad\=\kill}
+\def\end@lgo{\end{tabbing}\end{minipage}}
+
+\newenvironment{algorithm}[2]{\begin{tabular}{|l|}
+    \hline
+    \textsc{#1} \ensuremath{(#2)}\\
+    \hline
+    \begin@lgo
+}
+{\end@lgo\\\hline\end{tabular}}
+\newenvironment{algo}[2]{\begin{center}\begin{algorithm}{#1}{#2}}{\end{algorithm}\end{center}}
+
+% References to common types
+\newcommand{\theoremref}[1]{Theorem \ref{#1}}
+\newcommand{\defref}[1]{Definition \ref{#1}}
+
+\newcommand{\abs}[1]{\ensuremath{\left| #1 \right|}}
+\newcommand{\ceiling}[1]{\ensuremath{\left\lceil #1 \right\rceil}}
+% Condition number (cond(A))
+\newcommand{\cond}[1]{\ensuremath{\mbox{cond} \left(#1\right)}}
+\newcommand{\congruent}[3]{\ensuremath{#1 \equiv #2 \mathrm{ (mod } #3 \mathrm{)}}}
+\newcommand{\degree}[1]{\ensuremath{\mathrm{deg} \left(#1\right)}}
+\newcommand{\determinate}[1]{\ensuremath{\left| #1 \right|}}
+\newcommand{\erf}{\ensuremath{\mathrm{erf}}}
+\newcommand{\field}[1]{\ensuremath{\mathbb{#1}}}
+\newcommand{\floor}[1]{\ensuremath{\left\lfloor #1 \right\rfloor}   }
+\newcommand{\gradient}{\ensuremath{\mathbf{\nabla}}}
+\newcommand{\indegree}[1]{\ensuremath{\mathrm{deg}^{-} \left(#1\right)}}
+\newcommand{\mvector}[1]{\ensuremath{\left\langle #1 \right\rangle}}
+\newcommand{\Mod}[2]{\ensuremath{#1 \mathbf{ mod } #2}}
+% The norm of a matrix (||A||)
+\newcommand{\norm}[1]{\ensuremath{|| #1 ||}}
+\newcommand{\outdegree}[1]{\ensuremath{\mathrm{deg}^{+}\left(#1\right)}}
+\newcommand{\recurrence}[1]{\ensuremath{\langle #1 \rangle}}
+\newcommand{\rop}[1]{\ensuremath{\mathbf{#1}}} % recurrence operator like E
+\newcommand{\set}[1]{\ensuremath{\left\{ #1 \right\}}}
+\newcommand{\setdef}[2]{\{#1 \ensuremath{|} #2\}} % TODO: ensure _NOT_ math??
+\newcommand{\true}{\ensuremath{\mathbf{T}}}
+\newcommand{\Var}[1]{\ensuremath{\mathrm{Var}\left( #1 \right)}}
+
+% A box around a paragraph.
+\newcommand{\fboxpar}[1]{\fbox{\begin{minipage}{0.98\linewidth} #1 \end{minipage}}}
