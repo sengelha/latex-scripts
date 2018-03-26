@@ -44,19 +44,19 @@
 % Adjust the title design
 \renewcommand{\maketitle}{%
   \begin{center}%
-    {\LARGE \@coursename \\}%
-    {\large \@college \\}%
-    {\large \@university \\}%
-    \vskip 1em%
-    {Term: \@term \\}%
-    {Classroom section: \@meetingtime, \@location \\}%
-    {Course homepage: \url{\@coursehomepage} \\}%
-    {Drop date (no penalty): \@dropdate \\}%
-    \vskip 1em%
-    {Instructor: \@instructor \\}%
-    {Office hours: \@officehours, \@office \\}%
-    {Phone \#: \@phone \\}%
-    {Email: \emailurl{\@email} \}%
+    \LARGE{\@coursename}\\
+    \large{\@college}\\
+    \large{\@university}\\
+    \vskip 1em
+    Term: \@term\\
+    Classroom section: \@meetingtime, \@location\\
+    Course homepage: \url{\@coursehomepage}\\
+    Drop date (no penalty): \@dropdate\\
+    \vskip 1em
+    Instructor: \@instructor\\
+    Office hours: \@officehours, \@office\\
+    Phone \#: \@phone \\
+    Email: \emailurl{\@email}
   \end{center}
 }
 
