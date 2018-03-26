@@ -11,6 +11,11 @@
 % Redefine the page margins
 \RequirePackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
 
+% Do not indent paragraphs
+\setlength{\parindent}{0ex}
+% Add a blank line between paragraphs
+\setlength{\parskip}{1em}
+
 % Load hyperref, set it up, add \emailurl command
 \RequirePackage{hyperref}
 \hypersetup{
@@ -27,8 +32,7 @@
 \def\college#1{\gdef\@college{#1}}
 \def\university#1{\gdef\@university{#1}}
 \def\term#1{\gdef\@term{#1}}
-\def\meetingtime#1{\gdef\@meetingtime{#1}}
-\def\location#1{\gdef\@location{#1}}
+\def\meetingtime#1{\gdef\@meetingtime{#1}} \def\location#1{\gdef\@location{#1}}
 \def\coursehomepage#1{\gdef\@coursehomepage{#1}}
 \def\dropdate#1{\gdef\@dropdate{#1}}
 \def\instructor#1{\gdef\@instructor{#1}}
