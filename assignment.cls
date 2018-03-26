@@ -25,26 +25,26 @@
 \def\emailurl#1{\href{mailto:#1}{\nolinkurl{#1}}}
 
 % Add various syllabus-specific global settings
-\def\coursename#1{\gdef\@coursename{#1}}
-\def\term#1{\gdef\@term{#1}}
-\def\assignment#1{\gdef\@assignment{#1}}
-\def\duedate#1{\gdef\@duedate{#1}}
-\def\totalpoints#1{\gdef\@totalpoints{#1}}
+\newtoks\coursename
+\newtoks\term
+\newtoks\assignment
+\newtoks\duedate
+\newtoks\totalpoints
 
 % Adjust the title design
 \renewcommand{\maketitle}{%
-  {\textbf \@coursename \\}%
-  {\textbf \@term \\}%
-  {\textbf \@assignment \\}%
-  {\textbf {Due Date: \@duedate} \\}%
-  {\textbf \@totalpoints}%
+  {\textbf \the\coursename \\}%
+  {\textbf \the\term \\}%
+  {\textbf \the\assignment \\}%
+  {\textbf {Due Date: \the\duedate} \\}%
+  {\textbf \the\totalpoints}%
 }
 
 % Set up our desired header and footer
 \RequirePackage{lastpage}
 \pagestyle{headandfoot}
 \headrule
-\header{\@coursename}{\@assignment}{Due Date: \@duedate}
+\header{\the\coursename}{\the\assignment}{Due Date: \the\duedate}
 \footer{}{}{Page \thepage\ of \pageref*{LastPage}}
 
 \endinput
