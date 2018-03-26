@@ -11,9 +11,12 @@
 % Redefine the page margins
 \RequirePackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
 
-% Adjust indentation and parskip
-\setlength{\parindent}{0cm}
-\setlength{\parskip}{1em}
+% Everything should be single-spaced
+\RequirePackage{setspace}
+\singlespacing
+
+% No indentation
+\parindent 0ex
 
 % Load hyperref, set it up, add \emailurl command
 \RequirePackage{hyperref}
@@ -47,7 +50,18 @@
   {\textbf \@term \\}%
   {\textbf \@assignment \\}%
   {\textbf {Due On: \@duedate} \\}%
-  {\textbf {\@totalpoints points}}%
+  {\textbf \@totalpoints \\}%
+  \rule[1ex]{\textwidth}{.1pt}
 }
+
+% These commands set up the running header on the top of the exam pages
+%\pagestyle{headandfoot}
+%\firstpageheader{}{}{}
+%\firstpagefooter{}{}{}
+%\runningheader{\code}{\hwtitle}{\term}
+%\runningheadrule
+%\runningfooter{}{Page \thepage\ of \numpages}{}
+%\runningfootrule
+%\bracketedpoints
 
 \endinput
