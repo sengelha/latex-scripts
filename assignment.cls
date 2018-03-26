@@ -60,6 +60,6 @@
 \pagestyle{fancyplain}
 \fancyhf{}
 \lhead{ \fancyplain{}{\@coursename\ -- \@assignment} }
-\rhead{ \fancyplain{}{Page \thepage\ of \pageref{LastPage}} }
+\rhead{ \fancyplain{}{Page \thepage\ of \pageref*{LastPage}} }
 
 \endinput
