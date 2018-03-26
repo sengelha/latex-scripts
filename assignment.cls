@@ -33,11 +33,11 @@
 
 % Adjust the title design
 \renewcommand{\maketitle}{%
-  {\textbf \the\coursename \\}%
-  {\textbf \the\term \\}%
-  {\textbf \the\assignment \\}%
-  {\textbf {Due Date: \the\duedate} \\}%
-  {\textbf \the\totalpoints}%
+  \textbf {\the\coursename} \\%
+  \textbf {\the\term} \\%
+  \textbf {\the\assignment} \\%
+  \textbf {Due Date: \the\duedate} \\%
+  \textbf {\the\totalpoints}%
 }
 
 % Set up our desired header and footer
