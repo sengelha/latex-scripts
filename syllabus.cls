@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{assignment}[2018/03/20 Steven Engelhardt's assignment LaTeX class]
+\ProvidesClass{syllabus}[2018/03/20 Steven Engelhardt's syllabus LaTeX class]
 
 % Passes and class options to the underlying article class
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
@@ -10,11 +10,6 @@
 
 % Redefine the page margins
 \RequirePackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
-
-% Do not indent paragraphs
-\parindent 0ex
-% Add a blank line between paragraphs
-\setlength{\parskip}{1em}
 
 % Load hyperref, set it up, add \emailurl command
 \RequirePackage{hyperref}
@@ -27,39 +22,38 @@
 % Remove the numbers from all the headings (\section, \subsection, etc.)
 \setcounter{secnumdepth}{-1}
 
-% Create a questions environment and question command
-\RequirePackage{mdframed}
-\newenvironment{questions}{\begin{enumerate}}{\end{enumerate}}
-\newcommand{\question}[3]{%
-  \item (#1 points) #2
-
-  \begin{mdframed}
-  \textbf{Solution: } #3
-  \end{mdframed}
-}
-
 % Add various syllabus-specific global settings
 \def\coursename#1{\gdef\@coursename{#1}}
+\def\college#1{\gdef\@college{#1}}
+\def\university#1{\gdef\@university{#1}}
 \def\term#1{\gdef\@term{#1}}
-\def\assignment#1{\gdef\@assignment{#1}}
-\def\duedate#1{\gdef\@duedate{#1}}
-\def\totalpoints#1{\gdef\@totalpoints{#1}}
+\def\meetingtime#1{\gdef\@meetingtime{#1}}
+\def\location#1{\gdef\@location{#1}}
+\def\coursehomepage#1{\gdef\@coursehomepage{#1}}
+\def\dropdate#1{\gdef\@dropdate{#1}}
+\def\instructor#1{\gdef\@instructor{#1}}
+\def\office#1{\gdef\@office{#1}}
+\def\officehours#1{\gdef\@officehours{#1}}
+\def\phone#1{\gdef\@phone{#1}}
+\def\email#1{\gdef\@email{#1}}
 
 % Adjust the title design
 \renewcommand{\maketitle}{%
-  {\textbf \@coursename \\}%
-  {\textbf \@term \\}%
-  {\textbf \@assignment \\}%
-  {\textbf {Due On: \@duedate} \\}%
-  {\textbf \@totalpoints}%
+  \begin{center}%
+    {\LARGE \@coursename \par}%
+    {\large \@college \par}%
+    {\large \@university \par}%
+    \vskip 1em%
+    {Term: \@term \par}%
+    {Classroom section: \@meetingtime, \@location \par}%
+    {Course homepage: \url{\@coursehomepage} \par}%
+    {Drop date (no penalty): \@dropdate \par}%
+    \vskip 1em%
+    {Instructor: \@instructor \par}%
+    {Office hours: \@officehours, \@office \par}%
+    {Phone \#: \@phone \par}%
+    {Email: \emailurl{\@email} \par}%
+  \end{center}\par
 }
-
-% Set up our desired header and footer
-\RequirePackage{fancyhdr}
-\RequirePackage{lastpage}
-\pagestyle{fancyplain}
-\fancyhf{}
-\lhead{ \fancyplain{}{\@coursename\ -- \@assignment} }
-\rhead{ \fancyplain{}{Page \thepage\ of \pageref{LastPage}} }
 
 \endinput

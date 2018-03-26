@@ -11,12 +11,10 @@
 % Redefine the page margins
 \RequirePackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
 
-% Everything should be single-spaced
-\RequirePackage{setspace}
-\singlespacing
-
-% No indentation
+% Do not indent paragraphs
 \parindent 0ex
+% Add a blank line between paragraphs
+\setlength{\parskip}{1em}
 
 % Load hyperref, set it up, add \emailurl command
 \RequirePackage{hyperref}
@@ -30,11 +28,14 @@
 \setcounter{secnumdepth}{-1}
 
 % Create a questions environment and question command
+\RequirePackage{mdframed}
 \newenvironment{questions}{\begin{enumerate}}{\end{enumerate}}
 \newcommand{\question}[3]{%
-  \item (#1 points) #2\\
-  \\
-  \framebox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\textbf{Solution: } #3}}
+  \item (#1 points) #2
+
+  \begin{mdframed}
+  \textbf{Solution: } #3
+  \end{mdframed}
 }
 
 % Add various syllabus-specific global settings
@@ -50,18 +51,15 @@
   {\textbf \@term \\}%
   {\textbf \@assignment \\}%
   {\textbf {Due On: \@duedate} \\}%
-  {\textbf \@totalpoints \\}%
-  \rule[1ex]{\textwidth}{.1pt}
+  {\textbf \@totalpoints}%
 }
 
-% These commands set up the running header on the top of the exam pages
-%\pagestyle{headandfoot}
-%\firstpageheader{}{}{}
-%\firstpagefooter{}{}{}
-%\runningheader{\code}{\hwtitle}{\term}
-%\runningheadrule
-%\runningfooter{}{Page \thepage\ of \numpages}{}
-%\runningfootrule
-%\bracketedpoints
+% Set up our desired header and footer
+\RequirePackage{fancyhdr}
+\RequirePackage{lastpage}
+\pagestyle{fancyplain}
+\fancyhf{}
+\lhead{ \fancyplain{}{\@coursename\ -- \@assignment} }
+\rhead{ \fancyplain{}{Page \thepage\ of \pageref{LastPage}} }
 
 \endinput
