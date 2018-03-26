@@ -42,9 +42,9 @@
 
 % Set up our desired header and footer
 \RequirePackage{lastpage}
-%\pagestyle{fancyplain}
-%\fancyhf{}
-%\lhead{ \fancyplain{}{\@coursename\ -- \@assignment} }
-%\rhead{ \fancyplain{}{Page \thepage\ of \pageref*{LastPage}} }
+\pagestyle{headandfoot}
+\headrule
+\header{\@coursename}{\@assignment}{Due Date: \@duedate}
+\footer{}{}{Page \thepage\ of \pageref*{LastPage}}
 
 \endinput
