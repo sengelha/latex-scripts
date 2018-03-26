@@ -18,6 +18,7 @@
 % Reduce the spacing between headings because of parskip
 \RequirePackage{titlesec}
 \titlespacing*{\section}{0pt}{0pt}{0pt}
+\titlespacing*{\subsection}{0pt}{0pt}{0pt}
 
 % Load hyperref, set it up, add \emailurl command
 \RequirePackage{hyperref}
