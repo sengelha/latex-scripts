@@ -15,6 +15,9 @@
 \setlength{\parindent}{0ex}
 % Add a blank line between paragraphs
 \setlength{\parskip}{1em}
+% Reduce the spacing between headings because of parskip
+\RequirePackage{titlesec}
+\titlespacing*{\section}{0pt}{0pt}{0pt}
 
 % Load hyperref, set it up, add \emailurl command
 \RequirePackage{hyperref}
@@ -42,8 +45,8 @@
 \def\email#1{\gdef\@email{#1}}
 
 % Adjust the title design
-\renewcommand{\maketitle}{%
-  \begin{center}%
+\renewcommand{\maketitle}{
+  \begin{center}
     \LARGE{\@coursename}\\
     \large{\@college}\\
     \large{\@university}\\
