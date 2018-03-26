@@ -22,4 +22,16 @@
 % Remove the numbers from all the headings (\section, \subsection, etc.)
 \setcounter{secnumdepth}{-1}
 
+% Add various syllabus-specific global settings
+\def\coursename#1{\gdef\@coursename{#1}}
+\def\term#1{\gdef\@term{#1}}
+\def\assignment#1{\gdef\@assignment{#1}}
+\def\duedate#1{\gdef\@duedate{#1}}
+\def\totalpoints#1{\gdef\@totalpoints{#1}}
+
+% Adjust the title design
+\renewcommand{\maketitle}{%
+  {\textbf \@coursename \par}%
+}
+
 \endinput
