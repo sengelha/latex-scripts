@@ -8,9 +8,6 @@
 % Load LaTeX's exam class
 \LoadClass{exam}
 
-% Sum up all points so we can create a grade table
-\addpoints
-
 % Do not indent paragraphs
 \setlength{\parindent}{0ex}
 % Add a blank line between paragraphs
@@ -24,25 +21,28 @@
 
 % Adjust the title design
 \renewcommand{\maketitle}{
-\begin{coverpages}
 \begin{tabular}{@{}p{0.48\textwidth}p{0.48\textwidth}@{}}
 \textbf{\the\coursename} & \textbf{Name (Print):}\enspace\hrulefill\\
 \textbf{\the\term}\\
 \textbf{\the\examname}\\
 \textbf{Time Limit: \the\timelimit}\\
-\hline
 \end{tabular}
 
-This exam contains \numpages\ pages (excluding this cover page) and \numquestions\ problems. Check to see if any pages
-are missing. Enter all requested information on the top of this page, and put your initials on the
-top of every page, in case the pages become separated.
+\rule[1ex]{\textwidth}{.1pt}
+
+This exam contains \numpages\ pages (including this cover page) and
+\numquestions\ questions. Check to see if any pages are missing. Enter
+all requested information on the top of this page, and put your initials
+on the top of every page, in case the pages become separated.
 
 This exam is \textbf{closed} book, but open mind.
 
-\begin{tabular}{@{} p{0.65\textwidth} p{0.33\textwidth} @{}}
 Please be aware of the following:
 
+\begin{minipage}[t]{3.7in}
+\vspace{0pt}
 \begin{itemize}
+
 \item \textbf{Mysterious or unsupported answers will not receive full credit.} Make sure that your responses
 are clear enough that I can easily understand how your arrived at your conclusions. I try to give
 partial credit where possible, but you've got to help me understand your thought process.
@@ -53,18 +53,25 @@ partial credit where possible, but you've got to help me understand your thought
 make sure I can tell where the continuation on the back starts and ends for each question.
 \end{itemize}
 
-Do not write in the table to the right. & \gradetable[v][questions]\\
-\end{tabular}
+Do not write in the table to the right.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{2.3in}
+\vspace{0pt}
+\addpoints
+\gradetable[v]
+\end{minipage}
 
 \newpage
-\end{coverpages}
 }
 
 % Set up our desired header and footer
 \pagestyle{headandfoot}
-\headrule
-\header{\the\coursename}{\the\examname}{\the\term}
-\footrule
-\footer{}{Page \thepage\ of \numpages}{}
+\firstpageheader{}{}{}
+\runningheader{\the\coursename}{\the\examname}{\the\term}
+\runningheadrule
+\firstpagefooter{}{}{}
+\runningfooter{}{Page \thepage\ of \numpages}{}
+\runningfootrule
 
 \endinput
