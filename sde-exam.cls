@@ -1,0 +1,87 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{sde-exam}[2018/04/15 Steven Engelhardt's exam LaTeX class]
+
+% Passes and class options to the underlying exam class
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{exam}}
+\ProcessOptions
+
+% Load LaTeX's exam class
+\LoadClass{exam}
+
+\RequirePackage{hyperref}
+\RequirePackage{tabularx}
+\RequirePackage{enumitem}
+\RequirePackage{parallel}
+\RequirePackage{titlesec}
+\RequirePackage{lastpage}
+
+% Sum up all points so we can create a grade table
+\addpoints
+
+% Do not indent paragraphs
+\setlength{\parindent}{0ex}
+% Add a blank line between paragraphs
+\setlength{\parskip}{1em}
+
+% Set sections to be left-aligned
+%\titlespacing{\section}{0pt}{*4}{*1.5}
+
+% Load hyperref, set it up, add \emailurl command
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue
+}
+\def\emailurl#1{\href{mailto:#1}{\nolinkurl{#1}}}
+
+% Add various syllabus-specific global settings
+\newtoks\coursename
+\newtoks\term
+\newtoks\examname
+\newtoks\timelimit
+
+% Adjust the title design
+\renewcommand{\maketitle}{
+\begin{coverpages}
+\begin{tabularx}{\textwidth}{@{}XX@{}}
+\textbf{\the\coursename} & \textbf{Name (Print):}\enspace\hrulefill\\
+\textbf{\the\term}\\
+\textbf{\the\examname}\\
+\textbf{Time Limit: \the\timelimit}\\
+\hline
+\end{tabularx}
+
+This exam contains \numpages\ pages (excluding this cover page) and \numquestions\ problems. Check to see if any pages
+are missing. Enter all requested information on the top of this page, and put your initials on the
+top of every page, in case the pages become separated.
+
+This exam is \textbf{closed} book, but open mind.
+
+\begin{tabular}{@{} p{0.65\textwidth} p{0.33\textwidth} @{}}
+Please be aware of the following:
+
+\begin{itemize}[topsep=0pt]
+\item \textbf{Mysterious or unsupported answers will not receive full credit.} Make sure that your responses
+are clear enough that I can easily understand how your arrived at your conclusions. I try to give
+partial credit where possible, but you've got to help me understand your thought process.
+
+\item \textbf{Write legibly.} If I can't read it, then I won't grade it.
+
+\item \textbf{If you need more space, use the back of the pages.} Clearly indicate when you have done this and
+make sure I can tell where the continuation on the back starts and ends for each question.
+\end{itemize}
+
+Do not write in the table to the right. & \gradetable[v][questions]\\
+\end{tabular}
+
+\newpage
+\end{coverpages}
+}
+
+% Set up our desired header and footer
+\pagestyle{headandfoot}
+\headrule
+\header{\the\coursename}{\the\examname}{\the\term}
+\footrule
+\footer{}{Page \thepage\ of \pageref*{LastPage}}{}
+
+\endinput
