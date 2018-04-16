@@ -35,7 +35,8 @@ This exam contains \numpages\ pages (including this cover page) and
 all requested information on the top of this page, and put your initials
 on the top of every page, in case the pages become separated.
 
-This exam is \textbf{closed} book, but open mind.
+You may \textit{not} use your books, notes, or any calculator on this
+exam.
 
 Please be aware of the following:
 
