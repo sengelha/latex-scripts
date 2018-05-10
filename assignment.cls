@@ -35,6 +35,8 @@
   \textbf {\the\totalpoints} \\%
 
   \noindent\textbf{Submit your answers to D2L by \the\duedate. Late homework will not be accepted.}
+  \vskip\bigskipamount
+  \nointerlineskip
 }
 
 % Set up our desired header and footer
