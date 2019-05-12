@@ -29,21 +29,13 @@
   captionpos=b,                    % sets the caption-position to bottom
   columns=fullflexible,
   commentstyle=\color{mygreen},    % comment style
+  frame=lines,
   keepspaces=true
   keywordstyle=\color{blue},       % keyword style
   stringstyle=\color{mymauve}     % string literal style
 }
 
 \lstdefinelanguage{json}{
-    basicstyle=\normalfont\ttfamily,
-    numbers=left,
-    numberstyle=\scriptsize,
-    stepnumber=1,
-    numbersep=8pt,
-    showstringspaces=false,
-    breaklines=true,
-    frame=lines,
-    backgroundcolor=\color{background},
     literate=
      *{0}{{{\color{numb}0}}}{1}
       {1}{{{\color{numb}1}}}{1}
