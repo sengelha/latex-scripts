@@ -8,6 +8,7 @@
 % Load LaTeX's exam class
 \LoadClass{beamer}
 
+\usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage{multicol}
