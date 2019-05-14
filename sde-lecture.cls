@@ -19,7 +19,7 @@
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
 \definecolor{mymauve}{rgb}{0.58,0,0.82}
-\definecolor{background}{HTML}{EEEEEE}
+\definecolor{background}{HTML}{F7F7F7}
 \definecolor{delim}{RGB}{20,105,176}
 \colorlet{punct}{red!60!black}
 
@@ -30,9 +30,10 @@
   columns=fullflexible,
   commentstyle=\color{mygreen},    % comment style
   frame=lines,
-  keepspaces=true
+  keepspaces=true,
   keywordstyle=\color{blue},       % keyword style
-  stringstyle=\color{mymauve}     % string literal style
+  stringstyle=\color{mymauve},     % string literal style
+  showstringspaces=false
 }
 
 \lstdefinelanguage{json}{
