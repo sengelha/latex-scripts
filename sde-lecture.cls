@@ -23,6 +23,7 @@
 \definecolor{background}{HTML}{F7F7F7}
 \definecolor{delim}{RGB}{20,105,176}
 \colorlet{punct}{red!60!black}
+\colorlet{numb}{magenta!60!black}
 
 \lstset{
   backgroundcolor=\color{background},   % choose the background color
