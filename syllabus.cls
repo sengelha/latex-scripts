@@ -64,4 +64,7 @@
   \end{center}
 }
 
+\usepackage{booktabs}
+\usepackage{tabularx}
+
 \endinput
