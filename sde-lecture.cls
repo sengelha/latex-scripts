@@ -72,6 +72,6 @@
  }
  {}
  
-\usetheme{Madrid}
+\usetheme{depaul}
 
 \endinput
