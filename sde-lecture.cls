@@ -11,6 +11,7 @@
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{listings}
+\usepackage{mathtools}
 \usepackage{multicol}
 \usepackage{tabularx}
 \usepackage{tikz}
