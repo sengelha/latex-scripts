@@ -39,17 +39,26 @@
   showstringspaces=false
 }
 
-\lstdefinelanguage{javascript}{
-  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
-  keywordstyle=\color{blue}\bfseries,
-  ndkeywords={class, export, boolean, throw, implements, import, this},
-  ndkeywordstyle=\color{darkgray}\bfseries,
-  identifierstyle=\color{black},
-  sensitive=false,
+\lstdefinelanguage{csharp}{
+  keywords={abstract, event, new, struct, as, explicit, null, switch, base, extern, object,
+            this, bool, false, operator, throw, break, finally, out, true, byte, fixed,
+            override, try, case, float, params, typeof, catch, for, private, uint, char,
+            foreach, protected, ulong, checked, goto, public, unchecked, class, if, readonly,
+            unsafe, const, implicit, ref, ushort, continue, in, return, using, decimal, int,
+            sbyte, virtual, default, interface, sealed, volatile,delegate, internal, short,
+            void, do, is, sizeof, while, double, lock, stackalloc, else, long, static,
+            enum, namespace, string},
   comment=[l]{//},
   morecomment=[s]{/*}{*/},
-  commentstyle=\color{purple}\ttfamily,
-  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+\lstdefinelanguage{javascript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
   morestring=[b]',
   morestring=[b]"
 }
