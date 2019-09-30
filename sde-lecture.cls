@@ -26,6 +26,13 @@
 \colorlet{punct}{red!60!black}
 \colorlet{numb}{magenta!60!black}
 
+% Add Beamer equivalents of Exam question/answers
+\newcommand{\question}{}
+\newenvironment{choices}{\begin{enumerate}}{\end{enumerate}}
+\newcommand{\choice}{\normalfont\item}
+\newcommand{\CorrectChoice}{\only<1>{\normalfont\item}\only<2>{\normalfont\bfseries\item}}
+\renewenvironment{solution}{\begin{block}<2>{}}{\end{block}}
+
 \lstset{
   backgroundcolor=\color{background},   % choose the background color
   basicstyle=\ttfamily,
