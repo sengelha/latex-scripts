@@ -28,7 +28,10 @@
 
 % Add Beamer equivalents of Exam question/answers
 \newcommand{\question}{}
+\newenvironment{parts}{}{}
+\renewcommand{\part}{\framebreak}
 \newenvironment{choices}{\begin{enumerate}}{\end{enumerate}}
+\newenvironment{oneparchoices}{\begin{enumerate}}{\end{enumerate}}
 \newcommand{\choice}{\normalfont\item}
 \newcommand{\CorrectChoice}{\only<1>{\normalfont\item}\only<2>{\normalfont\bfseries\item}}
 \renewenvironment{solution}{\begin{block}<2>{}}{\end{block}}
