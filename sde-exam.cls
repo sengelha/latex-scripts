@@ -40,8 +40,6 @@ exam.
 
 Please be aware of the following:
 
-\begin{minipage}[t]{3.7in}
-\vspace{0pt}
 \begin{itemize}
 
 \item \textbf{Mysterious or unsupported answers will not receive full credit.} Make sure that your responses
@@ -54,14 +52,12 @@ partial credit where possible, but you've got to help me understand your thought
 make sure I can tell where the continuation on the back starts and ends for each question.
 \end{itemize}
 
-Do not write in the table to the right.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{2.3in}
-\vspace{0pt}
+Do not write in the table below.
+
 \addpoints
-\gradetable[v]
-\end{minipage}
+\begin{center}
+\multirowgradetable{\numexpr(\numquestions / 10)}
+\end{center}
 
 \newpage
 }
