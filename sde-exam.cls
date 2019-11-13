@@ -8,6 +8,9 @@
 % Load LaTeX's exam class
 \LoadClass{exam}
 
+% Load up related packages
+\RequirePackage{amsmath}
+
 % Do not indent paragraphs
 \setlength{\parindent}{0ex}
 % Add a blank line between paragraphs
