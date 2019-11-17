@@ -59,7 +59,7 @@ Do not write in the table below.
 
 \addpoints
 \begin{center}
-\multirowgradetable{\numexpr(\numquestions / 10)}
+\multirowgradetable{3}
 \end{center}
 
 \newpage
