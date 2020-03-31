@@ -59,7 +59,10 @@
     \vskip 1em
     Instructor: \@instructor\\
     Office hours: \@officehours, \@office\\
-    Phone \#: \@phone \\
+    \ifx \@phone \undefined
+    \else
+    Phone \#: \@phone\\
+    \fi
     Email: \emailurl{\@email}
   \end{center}
 }
