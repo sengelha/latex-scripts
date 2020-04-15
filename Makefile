@@ -1,72 +1,70 @@
 ifeq ($(OS),Windows_NT)
-	RM=del
-	CP=copy
-	PATHSEP2=\\
-	PATHSEP=$(strip $(PATHSEP2))
-	RMDIRS=rmdir /s /q
-	MKDIR_P=mkdir
+	RM:=del
+	CP:=copy
+	PATHSEP2:=\\
+	PATHSEP:=$(strip $(PATHSEP2))
+	RMDIRS:=rmdir /s /q
+	MKDIR_P:=mkdir
+	TEXMFHOME:=C:/Users/senge/AppData/Local/MiKTeX/2.9
 else
-	RM=rm -f
-	CP=cp
-	PATHSEP2=/
-	PATHSEP=$(strip $(PATHSEP2))
-	RMDIRS=rm -rf
-	MKDIR_P=mkdir
+	RM:=rm -f
+	CP:=cp
+	PATHSEP2:=/
+	PATHSEP:=$(strip $(PATHSEP2))
+	RMDIRS:=rm -rf
+	MKDIR_P:=mkdir -p
+	TEXMFHOME:=$(shell kpsewhich -var-value TEXMFHOME)
 endif
 
-DESTDIR=C:\Users\senge\AppData\Local\MiKTeX\2.9\tex\latex
+LATEX_DIR:=$(TEXMFHOME)/tex/latex
 
 .PHONY: install
 install: sde-assignment sde-exam sde-lecture sde-quiz sde-syllabus
+ifeq ($(OS),Windows_NT)
 	@echo Be sure to refresh the filename database in the MiKTeX Console
+endif
 
 .PHONY: sde-assignment
-sde-assignment: $(DESTDIR)\sde-assignment\sde-assignment.cls
+sde-assignment: $(LATEX_DIR)/sde-assignment/sde-assignment.cls
 
-$(DESTDIR)\sde-assignment\sde-assignment.cls: sde-assignment.cls | $(DESTDIR)\sde-assignment
-	$(CP) sde-assignment.cls $(DESTDIR)\sde-assignment\sde-assignment.cls
+$(LATEX_DIR)/sde-assignment/%: % | $(LATEX_DIR)/sde-assignment
+	$(CP) $< $@
 
-$(DESTDIR)\sde-assignment:
-	$(MKDIR_P) $(DESTDIR)\sde-assignment
+$(LATEX_DIR)/sde-assignment:
+	$(MKDIR_P) $@
 
 .PHONY: sde-exam
-sde-exam: $(DESTDIR)\sde-exam\sde-exam.cls
+sde-exam: $(LATEX_DIR)/sde-exam/sde-exam.cls
 
-$(DESTDIR)\sde-exam\sde-exam.cls: sde-exam.cls | $(DESTDIR)\sde-exam
-	$(CP) sde-exam.cls $(DESTDIR)\sde-exam\sde-exam.cls
+$(LATEX_DIR)/sde-exam/%: % | $(LATEX_DIR)/sde-exam
+	$(CP) $< $@
 
-$(DESTDIR)\sde-exam:
-	$(MKDIR_P) $(DESTDIR)\sde-exam
+$(LATEX_DIR)/sde-exam:
+	$(MKDIR_P) $@
 
 .PHONY: sde-lecture
-sde-lecture: $(DESTDIR)\sde-lecture\sde-lecture.cls $(DESTDIR)\sde-lecture\beamerthemedepaul.sty $(DESTDIR)\sde-lecture\depaul-title.png
+sde-lecture: $(LATEX_DIR)/sde-lecture/sde-lecture.cls $(LATEX_DIR)/sde-lecture/beamerthemedepaul.sty $(LATEX_DIR)/sde-lecture/depaul-title.png
 
-$(DESTDIR)\sde-lecture\sde-lecture.cls: sde-lecture.cls | $(DESTDIR)\sde-lecture
-	$(CP) sde-lecture.cls $(DESTDIR)\sde-lecture\sde-lecture.cls
+$(LATEX_DIR)/sde-lecture/%: % | $(LATEX_DIR)/sde-lecture
+	$(CP) $< $@
 
-$(DESTDIR)\sde-lecture\beamerthemedepaul.sty: beamerthemedepaul.sty | $(DESTDIR)\sde-lecture
-	$(CP) beamerthemedepaul.sty $(DESTDIR)\sde-lecture\beamerthemedepaul.sty
-
-$(DESTDIR)\sde-lecture\depaul-title.png: depaul-title.png | $(DESTDIR)\sde-lecture
-	$(CP) depaul-title.png $(DESTDIR)\sde-lecture\depaul-title.png
-
-$(DESTDIR)\sde-lecture:
-	$(MKDIR_P) $(DESTDIR)\sde-lecture
+$(LATEX_DIR)/sde-lecture:
+	$(MKDIR_P) $@
 
 .PHONY: sde-quiz
-sde-quiz: $(DESTDIR)\sde-quiz\sde-quiz.cls
+sde-quiz: $(LATEX_DIR)/sde-quiz/sde-quiz.cls
 
-$(DESTDIR)\sde-quiz\sde-quiz.cls: sde-quiz.cls | $(DESTDIR)\sde-quiz
-	$(CP) sde-quiz.cls $(DESTDIR)\sde-quiz\sde-quiz.cls
+$(LATEX_DIR)/sde-quiz/%: % | $(LATEX_DIR)/sde-quiz
+	$(CP) $< $@
 
-$(DESTDIR)\sde-quiz:
-	$(MKDIR_P) $(DESTDIR)\sde-quiz
+$(LATEX_DIR)/sde-quiz:
+	$(MKDIR_P) $@
 
 .PHONY: sde-syllabus
-sde-syllabus: $(DESTDIR)\sde-syllabus\sde-syllabus.cls
+sde-syllabus: $(LATEX_DIR)/sde-syllabus/sde-syllabus.cls
 
-$(DESTDIR)\sde-syllabus\sde-syllabus.cls: sde-syllabus.cls | $(DESTDIR)\sde-syllabus
-	$(CP) sde-syllabus.cls $(DESTDIR)\sde-syllabus\sde-syllabus.cls
+$(LATEX_DIR)/sde-syllabus/%: % | $(LATEX_DIR)/sde-syllabus
+	$(CP) $< $@
 
-$(DESTDIR)\sde-syllabus:
-	$(MKDIR_P) $(DESTDIR)\sde-syllabus
+$(LATEX_DIR)/sde-syllabus:
+	$(MKDIR_P) $@
