@@ -8,15 +8,7 @@
 % Load LaTeX's exam class
 \LoadClass{beamer}
 
-\usepackage{booktabs}
-\usepackage{graphicx}
-\usepackage{listings}
-\usepackage{mathtools}
-\usepackage{multicol}
-\usepackage{tabularx}
-\usepackage{tikz}
-\usepackage{wrapfig}
-\usepackage{xcolor}
+\RequirePackage{listings}
 
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}

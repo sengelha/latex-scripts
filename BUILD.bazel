@@ -1,0 +1,59 @@
+load("@bazel_latex//packages:packages.bzl", "latex_package")
+
+latex_package(
+    name = "sde-assignment",
+    srcs = [
+        "sde-assignment.cls",
+        "@bazel_latex//packages:exam",
+        "@bazel_latex//packages:geometry",
+        "@bazel_latex//packages:hyperref",
+        "@bazel_latex//packages:lastpage",
+    ],
+    tests = ["sde-assignment_test.tex"],
+)
+
+latex_package(
+    name = "sde-exam",
+    srcs = [
+        "sde-exam.cls",
+        "@bazel_latex//packages:amsmath",
+        "@bazel_latex//packages:exam",
+    ],
+    tests = ["sde-exam_test.tex"],
+)
+
+latex_package(
+    name = "sde-lecture",
+    srcs = [
+        "sde-lecture.cls",
+        "beamerthemedepaul.sty",
+        "depaul-title.png",
+        "@bazel_latex//packages:beamer",
+        "@bazel_latex//packages:listings",
+    ],
+    tests = ["sde-lecture_test.tex"],
+)
+
+latex_package(
+    name = "sde-quiz",
+    srcs = [
+        "sde-quiz.cls",
+        "@bazel_latex//packages:amsmath",
+        "@bazel_latex//packages:exam",
+        "@bazel_latex//packages:geometry",
+        "@bazel_latex//packages:hyperref",
+        "@bazel_latex//packages:lastpage",
+    ],
+    tests = ["sde-quiz_test.tex"],
+)
+
+latex_package(
+    name = "sde-syllabus",
+    srcs = [
+        "sde-syllabus.cls",
+        "@bazel_latex//packages:geometry",
+        "@bazel_latex//packages:hyperref",
+        "@bazel_latex//packages:titlesec",
+    ],
+    tests = ["sde-syllabus_test.tex"],
+)

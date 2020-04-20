@@ -1,0 +1,50 @@
+\documentclass{sde-lecture}
+
+\title{Title}
+\author{Author}
+\institute{Institute}
+\date{Date}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\AtBeginSubsection[]
+{
+  \begin{frame}
+    \frametitle{Table oa Contents}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\section{Section 1}
+
+\begin{frame}
+\frametitle{Frame Title}
+\begin{itemize}
+\item Bullet point 1
+\item Bullet point 2
+\item Bullet point 3
+\end{itemize}
+\end{frame}
+
+\section{Section 2}
+
+\begin{frame}
+\frametitle{Frame Title}
+\begin{itemize}
+\item Bullet point 1
+\item Bullet point 2
+\item Bullet point 3
+\end{itemize}
+\end{frame}
+
+\end{document}
