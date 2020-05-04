@@ -5,7 +5,7 @@ ifeq ($(OS),Windows_NT)
 	PATHSEP:=$(strip $(PATHSEP2))
 	RMDIRS:=rmdir /s /q
 	MKDIR_P:=mkdir
-	TEXMFHOME:=C:/Users/senge/AppData/Local/MiKTeX/2.9
+	TEXMFHOME:=C:\Users\senge\AppData\Local\MiKTeX\2.9
 else
 	RM:=rm -f
 	CP:=cp
@@ -28,43 +28,43 @@ endif
 sde-assignment: $(LATEX_DIR)/sde-assignment/sde-assignment.cls
 
 $(LATEX_DIR)/sde-assignment/%: % | $(LATEX_DIR)/sde-assignment
-	$(CP) $< $@
+	$(CP) $< $(subst /,$(PATHSEP),$@)
 
 $(LATEX_DIR)/sde-assignment:
-	$(MKDIR_P) $@
+	$(MKDIR_P) $(subst /,$(PATHSEP),$@)
 
 .PHONY: sde-exam
 sde-exam: $(LATEX_DIR)/sde-exam/sde-exam.cls
 
 $(LATEX_DIR)/sde-exam/%: % | $(LATEX_DIR)/sde-exam
-	$(CP) $< $@
+	$(CP) $< $(subst /,$(PATHSEP),$@)
 
 $(LATEX_DIR)/sde-exam:
-	$(MKDIR_P) $@
+	$(MKDIR_P) $(subst /,$(PATHSEP),$@)
 
 .PHONY: sde-lecture
 sde-lecture: $(LATEX_DIR)/sde-lecture/sde-lecture.cls $(LATEX_DIR)/sde-lecture/beamerthemedepaul.sty $(LATEX_DIR)/sde-lecture/depaul-title.png
 
 $(LATEX_DIR)/sde-lecture/%: % | $(LATEX_DIR)/sde-lecture
-	$(CP) $< $@
+	$(CP) $< $(subst /,$(PATHSEP),$@)
 
 $(LATEX_DIR)/sde-lecture:
-	$(MKDIR_P) $@
+	$(MKDIR_P) $(subst /,$(PATHSEP),$@)
 
 .PHONY: sde-quiz
 sde-quiz: $(LATEX_DIR)/sde-quiz/sde-quiz.cls
 
 $(LATEX_DIR)/sde-quiz/%: % | $(LATEX_DIR)/sde-quiz
-	$(CP) $< $@
+	$(CP) $< $(subst /,$(PATHSEP),$@)
 
 $(LATEX_DIR)/sde-quiz:
-	$(MKDIR_P) $@
+	$(MKDIR_P) $(subst /,$(PATHSEP),$@)
 
 .PHONY: sde-syllabus
 sde-syllabus: $(LATEX_DIR)/sde-syllabus/sde-syllabus.cls
 
 $(LATEX_DIR)/sde-syllabus/%: % | $(LATEX_DIR)/sde-syllabus
-	$(CP) $< $@
+	$(CP) $< $(subst /,$(PATHSEP),$@)
 
 $(LATEX_DIR)/sde-syllabus:
-	$(MKDIR_P) $@
+	$(MKDIR_P) $(subst /,$(PATHSEP),$@)
