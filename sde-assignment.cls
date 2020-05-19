@@ -46,4 +46,23 @@
 \header{\the\coursename}{\the\assignment}{Due Date: \the\duedate}
 \footer{}{}{Page \thepage\ of \pageref*{LastPage}}
 
+% Configure listing format
+\RequirePackage{listings}
+\RequirePackage{xcolor}
+\definecolor{mylightgray}{HTML}{F7F7F7}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\lstset{
+  backgroundcolor=\color{mylightgray},   % choose the background color
+  basicstyle=\ttfamily,
+  captionpos=b,                    % sets the caption-position to bottom
+  columns=fullflexible,
+  commentstyle=\color{mygreen},    % comment style
+  frame=lines,
+  keepspaces=true,
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  showstringspaces=false
+}
+
 \endinput
