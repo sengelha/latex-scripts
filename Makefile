@@ -19,7 +19,7 @@ endif
 LATEX_DIR:=$(TEXMFHOME)/tex/latex
 
 .PHONY: install
-install: sde-assignment sde-exam sde-lecture sde-quiz sde-syllabus
+install: sde-assignment sde-exam sde-lecture sde-quiz sde-syllabus protobuf/lang protobuf/style
 ifeq ($(OS),Windows_NT)
 	@echo Be sure to refresh the filename database in the MiKTeX Console
 endif
@@ -67,4 +67,16 @@ $(LATEX_DIR)/sde-syllabus/%: % | $(LATEX_DIR)/sde-syllabus
 	$(CP) $< $(subst /,$(PATHSEP),$@)
 
 $(LATEX_DIR)/sde-syllabus:
+	$(MKDIR_P) $(subst /,$(PATHSEP),$@)
+
+.PHONY: protobuf/lang
+protobuf/lang: $(LATEX_DIR)/protobuf/lang.sty
+
+.PHONY: protobuf/style
+protobuf/style: $(LATEX_DIR)/protobuf/style.sty
+
+$(LATEX_DIR)/protobuf/%: protobuf/% | $(LATEX_DIR)/protobuf
+	$(CP) $(subst /,$(PATHSEP),$<) $(subst /,$(PATHSEP),$@)
+
+$(LATEX_DIR)/protobuf:
 	$(MKDIR_P) $(subst /,$(PATHSEP),$@)
