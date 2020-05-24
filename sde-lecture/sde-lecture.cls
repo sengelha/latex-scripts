@@ -18,6 +18,7 @@
 \usepackage{wrapfig}
 \usepackage{xcolor}
 
+% Add support for code listings
 \RequirePackage{sde-listings}
 
 % Add Beamer equivalents of Exam question/answers
@@ -38,12 +39,6 @@
   {\savebox\mybox{#1}\begin{quote}}
   {\vspace*{1mm}\signed{\usebox\mybox}\end{quote}}
 
-\lstnewenvironment{tabularlstlisting}[1][]
- {%
-  \lstset{aboveskip=-1.3ex,belowskip=-3.5ex,#1}%
- }
- {}
- 
 \usetheme{depaul}
 
 \endinput

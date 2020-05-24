@@ -40,6 +40,7 @@
   \nointerlineskip
 }
 
+% Add support for code listings
 \RequirePackage{sde-listings}
 
 % Set up our desired header and footer
