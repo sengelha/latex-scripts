@@ -30,6 +30,7 @@
 \newenvironment{oneparcheckboxes}{\begin{enumerate}}{\end{enumerate}}
 \newenvironment{oneparchoices}{\begin{enumerate}}{\end{enumerate}}
 \newcommand{\choice}{\normalfont\item}
+\newcommand{\correctchoice}{\only<1>{\normalfont\item}\only<2>{\normalfont\bfseries\item}}
 \newcommand{\CorrectChoice}{\only<1>{\normalfont\item}\only<2>{\normalfont\bfseries\item}}
 \renewenvironment{solution}{\begin{block}<2>{}}{\end{block}}
 
