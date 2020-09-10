@@ -44,4 +44,11 @@
 
 \usetheme{depaul}
 
+% Color hyperlinks
+\hypersetup{
+  colorlinks=true,
+  linkcolor=depaul@blue,
+  urlcolor=depaul@blue,
+}
+
 \endinput
