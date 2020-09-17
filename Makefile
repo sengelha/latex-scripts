@@ -5,7 +5,7 @@ ifeq ($(OS),Windows_NT)
 	PATHSEP:=$(strip $(PATHSEP2))
 	RMDIRS:=rmdir /s /q
 	MKDIR_P:=mkdir
-	TEXMFHOME:=C:\Users\senge\AppData\Local\MiKTeX\2.9
+	TEXMFHOME:=$(HOMEDRIVE)$(HOMEPATH)\AppData\Local\MiKTeX\2.9
 else
 	RM:=rm -f
 	CP:=cp
