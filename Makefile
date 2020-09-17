@@ -5,7 +5,7 @@ ifeq ($(OS),Windows_NT)
 	PATHSEP:=$(strip $(PATHSEP2))
 	RMDIRS:=rmdir /s /q
 	MKDIR_P:=mkdir
-	TEXMFHOME:=$(HOMEDRIVE)$(HOMEPATH)\AppData\Local\MiKTeX\2.9
+	TEXMFHOME:=$(HOMEDRIVE)$(HOMEPATH)\texmf
 else
 	RM:=rm -f
 	CP:=cp
@@ -18,16 +18,16 @@ endif
 
 LATEX_DIR:=$(TEXMFHOME)/tex/latex
 TARGETS:=\
-         $(LATEX_DIR)/sde-listings.sty\
-	 $(LATEX_DIR)/sde-assignment/sde-assignment.cls\
-         $(LATEX_DIR)/sde-exam/sde-exam.cls\
-         $(LATEX_DIR)/sde-lecture/sde-lecture.cls\
-         $(LATEX_DIR)/sde-lecture/beamerthemedepaul.sty\
-         $(LATEX_DIR)/sde-lecture/depaul-title.png\
-         $(LATEX_DIR)/sde-protobuf/lang.sty\
-         $(LATEX_DIR)/sde-protobuf/style.sty\
-         $(LATEX_DIR)/sde-quiz/sde-quiz.cls\
-         $(LATEX_DIR)/sde-syllabus/sde-syllabus.cls
+        $(LATEX_DIR)/sde-listings.sty\
+        $(LATEX_DIR)/sde-assignment/sde-assignment.cls\
+        $(LATEX_DIR)/sde-exam/sde-exam.cls\
+        $(LATEX_DIR)/sde-lecture/sde-lecture.cls\
+        $(LATEX_DIR)/sde-lecture/beamerthemedepaul.sty\
+        $(LATEX_DIR)/sde-lecture/depaul-title.png\
+        $(LATEX_DIR)/sde-protobuf/lang.sty\
+        $(LATEX_DIR)/sde-protobuf/style.sty\
+        $(LATEX_DIR)/sde-quiz/sde-quiz.cls\
+        $(LATEX_DIR)/sde-syllabus/sde-syllabus.cls
 
 .PHONY: install
 install: $(TARGETS)
