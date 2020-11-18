@@ -16,6 +16,8 @@
 % Add a blank line between paragraphs
 \setlength{\parskip}{1em}
 
+\def\numexamgradetablerows{3}
+
 % Add various syllabus-specific global settings
 \newtoks\coursename
 \newtoks\term
@@ -59,7 +61,7 @@ Do not write in the table below.
 
 \addpoints
 \begin{center}
-\multirowgradetable{3}
+\multirowgradetable{\numexamgradetablerows}
 \end{center}
 
 \newpage
