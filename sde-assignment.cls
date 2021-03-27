@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{assignment}[2018/03/20 Steven Engelhardt's assignment LaTeX class]
+\ProvidesClass{sde-assignment}[2018/03/20 Steven Engelhardt's assignment LaTeX class]
 
 % Passes and class options to the underlying exam class
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{exam}}
