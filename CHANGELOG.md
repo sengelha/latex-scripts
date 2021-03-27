@@ -3,6 +3,15 @@
 ## [Unreleased]
 
 
+<a name="release-1.3"></a>
+## [release-1.3] - 2021-03-27
+### Code Refactoring
+- Move all .cls files to root directory
+
+### New Features
+- Add git-chglog templates
+
+
 <a name="release-1.2"></a>
 ## [release-1.2] - 2021-03-26
 ### Buf Fixes
@@ -28,6 +37,7 @@
 <a name="release-1.0"></a>
 ## release-1.0 - 2021-03-26
 
-[Unreleased]: https://github.com/sengelha/latex-scripts/compare/release-1.2...HEAD
+[Unreleased]: https://github.com/sengelha/latex-scripts/compare/release-1.3...HEAD
+[release-1.3]: https://github.com/sengelha/latex-scripts/compare/release-1.2...release-1.3
 [release-1.2]: https://github.com/sengelha/latex-scripts/compare/release-1.1...release-1.2
 [release-1.1]: https://github.com/sengelha/latex-scripts/compare/release-1.0...release-1.1
