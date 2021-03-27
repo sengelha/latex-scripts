@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{syllabus}[2018/03/20 Steven Engelhardt's syllabus LaTeX class]
+\ProvidesClass{sde-syllabus}[2018/03/20 Steven Engelhardt's syllabus LaTeX class]
 
 % Passes and class options to the underlying article class
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
