@@ -2,23 +2,7 @@
 
 \useinnertheme{circles}
 \useoutertheme{infolines}
-
-% Use DePaul blue colors
-\definecolor{depaul@blue}{rgb}{0.012,0.4,0.671}
-\setbeamercolor*{structure}{fg=depaul@blue,bg=white}
-\setbeamercolor*{palette primary}{use=structure,fg=white,bg=structure.fg}
-\setbeamercolor*{palette secondary}{use=structure,fg=white,bg=structure.fg}
-\setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=structure.fg}
-\setbeamercolor*{palette quaternary}{fg=white,bg=structure.fg}
-\setbeamercolor*{sidebar}{use=structure,bg=structure.fg}
-\setbeamercolor*{palette sidebar primary}{use=structure,fg=structure.fg!10}
-\setbeamercolor*{palette sidebar secondary}{fg=white}
-\setbeamercolor*{palette sidebar tertiary}{use=structure,fg=structure.fg!50}
-\setbeamercolor*{palette sidebar quaternary}{fg=white}
-\setbeamercolor*{title}{parent=structure}
-\setbeamercolor*{titlelike}{parent=palette primary}
-\setbeamercolor*{separation line}{}
-\setbeamercolor*{fine separation line}{}
+\usecolortheme{depaul}
 
 % Hide navigation symbol
 \setbeamertemplate{navigation symbols}{}
@@ -33,25 +17,25 @@
   \vbox{}
   \vfill
   \begingroup
-    \centering
-    \begin{beamercolorbox}[sep=8pt,center,#1]{title}
-      \usebeamerfont{title}\inserttitle\par%
-      \ifx\insertsubtitle\@empty%
-      \else%
-        \vskip0.25em%
-        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
-      \fi%     
-    \end{beamercolorbox}%
-    \vskip1em\par
-    \begin{beamercolorbox}[sep=8pt,center,#1]{author}
-      \usebeamerfont{author}\insertauthor
-    \end{beamercolorbox}
-    \begin{beamercolorbox}[sep=8pt,center,#1]{institute}
-      \usebeamerfont{institute}\insertinstitute
-    \end{beamercolorbox}
-    \begin{beamercolorbox}[sep=8pt,center,#1]{date}
-      \usebeamerfont{date}\insertdate
-    \end{beamercolorbox}
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,#1]{title}
+    \usebeamerfont{title}\inserttitle\par%
+    \ifx\insertsubtitle\@empty%
+    \else%
+      \vskip0.25em%
+      {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+    \fi%     
+  \end{beamercolorbox}%
+  \vskip1em\par
+  \begin{beamercolorbox}[sep=8pt,center,#1]{author}
+    \usebeamerfont{author}\insertauthor
+  \end{beamercolorbox}
+  \begin{beamercolorbox}[sep=8pt,center,#1]{institute}
+    \usebeamerfont{institute}\insertinstitute
+  \end{beamercolorbox}
+  \begin{beamercolorbox}[sep=8pt,center,#1]{date}
+    \usebeamerfont{date}\insertdate
+  \end{beamercolorbox}
   \endgroup
   \vfill
 }
