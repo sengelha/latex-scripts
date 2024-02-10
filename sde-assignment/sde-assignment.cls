@@ -46,7 +46,4 @@
 \header{\the\coursename}{\the\assignment}{Due Date: \the\duedate}
 \footer{}{}{Page \thepage\ of \pageref*{LastPage}}
 
-% Add support for code listings
-\RequirePackage{sde-listings}
-
 \endinput
